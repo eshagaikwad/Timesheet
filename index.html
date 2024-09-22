@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timesheet</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <button id="toggle-preview-btn">Show Preview</button>
+      <button id="add-timesheet-btn">Add Timesheet</button>
+      <button id="view-all-timesheets">View All Timesheet</button>
+    </header>
+
+    <div class="three-vertical-boxes">
+      <div class="data-column">
+        <h3>Date</h3>
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" />
+      </div>
+
+      <div class="On-Leave-column">
+        <h3>On Leave</h3>
+        <label for="leave-status">Leave Status:</label>
+        <select id="leave-status">
+          <option value="No">No</option>
+          <option value="Yes">Yes</option>
+        </select>
+      </div>
+
+      <div class="Activities-column">
+        <h3>Activities</h3>
+        <div id="activities-container">
+          <div class="activity-form">
+            <label for="project">Project:</label>
+            <select class="project">
+              <!-- <option value="Java">Java</option>
+                        <option value="C#">C#</option> -->
+            </select>
+
+            <label for="sub-project">Sub-Project:</label>
+            <select class="sub-project">
+              <!-- <option value="Timesheet">Timesheet</option>
+                        <option value="Account">Account</option> -->
+            </select>
+
+            <label for="batch">Batch:</label>
+            <select class="batch">
+              <!-- <option value="Auropay">Auropay</option>
+                        <option value="Captive">Captive</option> -->
+            </select>
+
+            <label for="hours">Hours Needed:</label>
+            <input
+              class="hours"
+              type="number"
+              min="0"
+              max="23"
+              placeholder="HH"
+            />
+            <input
+              class="minutes"
+              type="number"
+              min="0"
+              max="59"
+              placeholder="MM"
+            />
+
+            <label for="activity-description">Activity:</label>
+            <input
+              class="activity-description"
+              type="text"
+              placeholder="Describe Activity"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button id="add-activity-btn">Add Activity</button>
+      <button id="submit-timesheet-btn">Submit Timesheet</button>
+    </div>
+
+    <div id="preview-table-container" class="hidden">
+      <h3>Preview Timesheets</h3>
+      <table class="preview-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Leave Status</th>
+            <th>Activities</th>
+          </tr>
+        </thead>
+        <tbody id="preview-body"></tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
